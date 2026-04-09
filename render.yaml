@@ -2,9 +2,11 @@ services:
   - type: web
     name: openclaw
     runtime: docker
-    plan: starter
+    plan: free
     healthCheckPath: /health
     envVars:
+      - key: OPENCLAW_GATEWAY_BIND
+        value: "lan"
       - key: OPENCLAW_GATEWAY_PORT
         value: "8080"
       - key: OPENCLAW_STATE_DIR
@@ -13,7 +15,5 @@ services:
         value: /data/workspace
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
-    disk:
-      name: openclaw-data
-      mountPath: /data
-      sizeGB: 1
+      - key: OPENCLAW_CONTROL_UI_DANGEROUSLY_ALLOW_HOST_HEADER_ORIGIN_FALLBACK
+        value: "true"
