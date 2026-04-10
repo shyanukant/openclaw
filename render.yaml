@@ -13,6 +13,9 @@ services:
         value: /data/.openclaw
       - key: OPENCLAW_WORKSPACE_DIR
         value: /data/workspace
+        fromEnvVar: PORT 
+      - key: GEMINI_API_KEY  # Swapped to Google AI Studio
+        sync: false
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
       - key: OPENCLAW_CONTROL_UI_DANGEROUSLY_ALLOW_HOST_HEADER_ORIGIN_FALLBACK
