@@ -14,7 +14,7 @@ services:
       - key: OPENCLAW_WORKSPACE_DIR
         value: /data/workspace
         fromEnvVar: PORT 
-      - key: GEMINI_API_KEY  # Swapped to Google AI Studio
+      - key: GOOGLE_GEMINI_API_KEY  # Swapped to Google AI Studio
         sync: false
       - key: OPENCLAW_GATEWAY_TOKEN
         generateValue: true
